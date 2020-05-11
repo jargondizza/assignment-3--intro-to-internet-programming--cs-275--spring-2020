@@ -5,6 +5,8 @@ boxB.addEventListener(`click`, flipB);
 const boxC = document.getElementsByTagName(`td`).item(2);
 boxC.addEventListener(`click`, flipC);
 const boxD = document.getElementsByTagName(`td`).item(3);
+boxD.addEventListener(`click`, flipD);
+
 function flipA() {
     if (boxA.style.transform != `rotate(180deg)`){
         boxA.style.transform = `rotate(180deg)`;
@@ -53,3 +55,18 @@ function unflipC() {
     boxC.style.color = `#222`;
 }
 
+function flipD() {
+    if (boxD.style.transform != `rotate(180deg)`){
+        boxD.style.transform = `rotate(180deg)`;
+        boxD.style.color = `#364aff`;
+    }
+    else unflipD();
+    unflipA();
+    unflipB();
+    unflipC();
+}
+
+let unflipD = () => {
+    boxD.style.transform = `rotate(0deg)`;
+    boxD.style.color = `#222`;
+};
